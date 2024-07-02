@@ -4,7 +4,6 @@ import {
   OrbitControls,
   PerspectiveCamera,
   SpotLight,
-  Text,
   Text3D,
 } from "@react-three/drei";
 import * as styles from "@/styles/canvas.css";
