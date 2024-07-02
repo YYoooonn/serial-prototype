@@ -1,10 +1,10 @@
-import Image from "next/image";
-import styles from "@/styles/page.module.css";
+import { theme } from "@/styles/theme.css";
+import * as styles from "@/styles/overlay.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.test}>PRJT_SERIAL</div>
+    <main>
+      <div className={styles.textoverlay}>PRJT_SERIAL</div>
     </main>
   );
 }

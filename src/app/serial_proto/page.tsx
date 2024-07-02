@@ -1,10 +1,13 @@
-import Image from "next/image";
-import styles from "@/styles/page.module.css";
+"use client";
 
-export default function Home() {
+import { PRJTCanvas } from "@/components/Canvas";
+import * as styles from "@/styles/overlay.css";
+
+export default function SerialProto() {
   return (
-    <main className={styles.main}>
-      <div className={styles.test}>SERIAL_PROTO</div>
+    <main>
+      <PRJTCanvas />
+      <div className={styles.textoverlay}>SERIAL_PROTO</div>
     </main>
   );
 }
