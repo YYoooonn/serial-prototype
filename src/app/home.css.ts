@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import * as palette from "@/styles/palettes.json"
 
 export const title = style({
   position: "relative",
@@ -30,6 +31,6 @@ export const linkDeactivated = style({
   marginTop: "8px",
   marginLeft: "20px",
   fontSize: "16px",
-  color: "grey",
+  color: palette.gray5,
   pointerEvents: "none",
 });

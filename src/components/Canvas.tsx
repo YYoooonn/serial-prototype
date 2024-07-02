@@ -35,7 +35,6 @@ export const PRJTCanvas = () => {
           far={1000}
           rotation={[0, 0, 0]}
         />
-        <OrbitControls enabled enablePan enableRotate enableZoom={true} />
       </Canvas>
     </div>
   );

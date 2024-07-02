@@ -12,6 +12,9 @@ export default function Home() {
           <Link className={styles.linkActivated} href={"/serial_proto"}>
             SERIAL_000 : PROTOTYPE
           </Link>
+          <Link className={styles.linkActivated} href={"/serial_proto"}>
+            SERIAL_001 : THREE BODY CONDITION
+          </Link>
         </li>
 
         {/* deactivated */}

@@ -1,6 +1,5 @@
 import { animated, config, useSpring } from "@react-spring/three";
-import { Center, SpotLight, Text3D, useCursor } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { hoveredMat, defaultMat } from "@/assets/materials";
 import { useRef, useState } from "react";
 import * as THREE from "three";
 import { arrayRemSliced, numRemSliced } from "@/constants/constant";
@@ -33,12 +32,14 @@ export default function Rem() {
 function SlicedRem(props: slicedProps) {
   const [hovered, setHovered] = useState(false);
   const { geometry, material } = SlicedModel(props.count);
+  // const outputMaterial = hovered? hoveredMat: material;
+  const outputMaterial = material;
   const { scale } = useSpring({
-    scale: hovered ? 1 : 1,
+    scale: hovered ? 1.1 : 1,
     config: config.wobbly,
   });
   const { rotation } = useSpring({
-    rotation: props.remHovered ? ((numRemSliced - 1) / 2 - props.count) / 5 : 0,
+    rotation: props.remHovered ? ((numRemSliced - 1) / 2 - props.count) / 4 : 0,
     config: config.wobbly,
   });
   return (
@@ -46,14 +47,17 @@ function SlicedRem(props: slicedProps) {
       scale={scale}
       position={[0, 0, 0]}
       rotation-y={rotation}
-      onPointerOver={() => {
+      onPointerOver={(e) => {
         setHovered(true);
       }}
       onPointerLeave={() => {
         setHovered(false);
       }}
     >
-      <mesh position={[0, 0, 1.5]} geometry={geometry} material={material} />
+      <mesh position={[0, 0, 1.5]}>
+        <bufferGeometry {...geometry} />
+        <material attach={"material"} {...outputMaterial} />
+      </mesh>
     </animated.group>
   );
   // const { geometry, material } = SlicedModel();
