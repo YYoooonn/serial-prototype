@@ -26,6 +26,9 @@ export default function Home() {
           </li>
         ))}
       </ul>
+      <Link className={styles.linkActivated} href={"/test"}>
+        notion test
+      </Link>
     </main>
   );
 }
