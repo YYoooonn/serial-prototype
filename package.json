@@ -10,12 +10,15 @@
     "format": "prettier --cache --write ."
   },
   "dependencies": {
+    "@notion-render/client": "^0.0.2",
+    "@notionhq/client": "^2.2.15",
     "@react-spring/three": "^9.7.3",
     "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.108.1",
     "@react-three/fiber": "^8.16.8",
     "@vanilla-extract/css": "^1.15.3",
     "next": "14.2.4",
+    "notion-client": "^6.16.0",
     "react": "^18",
     "react-dom": "^18",
     "three": "^0.166.0",

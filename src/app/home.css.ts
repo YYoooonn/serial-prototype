@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import * as palette from "@/styles/palettes.json"
+import * as palette from "@/styles/palettes.json";
 
 export const title = style({
   position: "relative",
