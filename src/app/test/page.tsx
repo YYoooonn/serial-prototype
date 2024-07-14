@@ -1,7 +1,7 @@
 import { getDB } from "@/utils/notion";
 import * as NotionEndpoints from "@notionhq/client/build/src/api-endpoints";
 
-export const revalidate = 60 // revalidate every 1 minutes
+export const revalidate = 60; // revalidate every 1 minutes
 
 interface Properties {
   name: { rich_text: NotionEndpoints.RichTextItemResponse[] };
