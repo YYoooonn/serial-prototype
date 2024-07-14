@@ -13,12 +13,45 @@ export const titleOverlay = style({
   top: "20px",
   left: "20px",
   fontSize: "16px",
+  background: "transparent",
+  zIndex: 999,
+});
+
+export const transBackground = style({
+  background: "transparent",
+});
+
+export const landingTable = style({
+  display: "table",
+  tableLayout: "fixed",
+  width: "100vw",
+});
+
+export const tableRow = style({
+  display: "table-row",
+});
+
+export const tableCell = style({
+  display: "table-cell",
+  // paddingLeft: "20px",
+  // paddingTop: "8px"
+});
+
+export const testlinkActivated = style({
+  display: "flex",
+  paddingTop: "8px",
+  paddingLeft: "20px",
+  fontSize: "16px",
+  color: "white",
+  ":hover": {
+    color: "blue",
+  },
 });
 
 export const linkActivated = style({
   display: "flex",
-  marginTop: "8px",
-  marginLeft: "20px",
+  paddingTop: "8px",
+  paddingLeft: "20px",
   fontSize: "16px",
   color: "white",
   ":hover": {
@@ -28,8 +61,8 @@ export const linkActivated = style({
 
 export const linkDeactivated = style({
   display: "flex",
-  marginTop: "8px",
-  marginLeft: "20px",
+  paddingTop: "8px",
+  paddingLeft: "20px",
   fontSize: "16px",
   color: palette.gray5,
   pointerEvents: "none",
