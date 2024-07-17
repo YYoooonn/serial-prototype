@@ -5,6 +5,8 @@ import {
   OrbitControls,
   SpotLight,
   Grid,
+  ScrollControls,
+  Scroll,
 } from "@react-three/drei";
 import * as styles from "@/styles/canvas.css";
 import * as THREE from "three";
@@ -39,15 +41,17 @@ const TEXTS = [
   "coca cola zero",
 ];
 
-export const PRJTCanvas = ({ dark }: { dark: boolean }) => {
+export function PRJTCanvas({ dark }: { dark: boolean }) {
   return (
     <div className={styles.canvas} key={"canvas"}>
       <Canvas shadows frameloop="always">
-        {/* <ambientLight intensity={1000} color={"#FFFFFF"} /> */}
+        <ScrollControls pages={2} damping={1}>
+          <Grids dark={dark} />
+          <Scroll>
+            <ChainedText texts={TEXTS} dark={dark} />
+          </Scroll>
+        </ScrollControls>
         <color attach="background" args={dark ? ["#000000"] : ["#FFFFFF"]} />
-        <ChainedText texts={TEXTS} dark={dark} />
-        <Grids dark={dark} />
-        <OrbitControls enableZoom={false} />
         <PerspectiveCamera
           makeDefault
           position={[0, 0, 600]}
@@ -57,10 +61,11 @@ export const PRJTCanvas = ({ dark }: { dark: boolean }) => {
           far={4000}
           rotation={[0, 0, 0]}
         />
+        <OrbitControls enableZoom={false} />
       </Canvas>
     </div>
   );
-};
+}
 
 function Grids({ dark }: { dark: boolean }) {
   return (
@@ -126,7 +131,7 @@ function ChainedText({ texts, dark }: { texts: Array<string>; dark: boolean }) {
   return (
     <group position={[0, 0, 0]}>
       {texts.map((t, i) => {
-        const rot = num / 2 - i;
+        const rot = -i;
         return (
           <Test
             key={i}

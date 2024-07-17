@@ -1,6 +1,14 @@
 import { style } from "@vanilla-extract/css";
 import * as palette from "@/styles/palettes.json";
 
+export const mainPage = style({
+  boxSizing: "border-box",
+  background: "black",
+  height: "100vh",
+  width: "100vw",
+  overflowX: "hidden",
+});
+
 export const title = style({
   position: "relative",
   marginTop: "20px",
