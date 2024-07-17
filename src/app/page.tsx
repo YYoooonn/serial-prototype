@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.mainPage}>
       <div className={styles.title}>PRJT_SERIAL</div>
       <div className={styles.landingTable}>
         <div className={styles.tableRow}>
@@ -18,7 +18,11 @@ export default function Home() {
             </Link>
             {/* deactivated */}
             {arrayLinks.map((i) => (
-              <Link className={styles.linkDeactivated} href={`/serial_${i}`}>
+              <Link
+                key={i}
+                className={styles.linkDeactivated}
+                href={`/serial_${i}`}
+              >
                 SERIAL_{i}
               </Link>
             ))}

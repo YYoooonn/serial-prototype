@@ -3,7 +3,6 @@ import { globalStyle } from "@vanilla-extract/css";
 globalStyle("*", {
   fontFamily: "var(--font-clacon)",
   boxSizing: "border-box",
-  background: "black",
   color: "white",
   padding: 0,
   margin: 0,
